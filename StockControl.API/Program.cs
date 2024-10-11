@@ -1,4 +1,3 @@
-using Microsoft.Extensions.DependencyInjection;
 using StockControl.API.Handlers;
 using StockControl.API.Middleware;
 using StockControl.API.Repositories;
@@ -10,7 +9,7 @@ namespace StockControl.API
     public class Program
     {
         public static async Task Main(string[] args)
-        {            
+        {
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

@@ -15,7 +15,7 @@ namespace StockControl.API.Controllers
 
         [HttpGet]
         public async Task<IEnumerable<Product>> GetProductsAsync()
-        {            
+        {
             try
             {
                 return await _productService.GetProductsAsync();

@@ -14,7 +14,7 @@ namespace StockControl.API.Repositories
 
             ValidaUnavailableQuantity(product);
             ValidateStockQuantity(order, product);
-            
+
             await _connection.ExecuteAsync("INSERT INTO Orders (ProductId, Quantity, Date, Value) VALUES (@ProductId, @Quantity, @Date, @Value)", order);
         }
         public async Task<IEnumerable<Order>> GetOrdersAsync()
