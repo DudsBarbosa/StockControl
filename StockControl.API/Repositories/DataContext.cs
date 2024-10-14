@@ -42,9 +42,9 @@ namespace StockControl.API.Repositories
                 CREATE TABLE IF NOT EXISTS Products (
                     Id INT NOT NULL AUTO_INCREMENT,
                     Description VARCHAR(255) NOT NULL,
-                    StockQuantity INT,
-                    AverageCostPrice DECIMAL,                    
-                    PartNumber VARCHAR(255),
+                    StockQuantity INT DEFAULT 0,
+                    AverageCostPrice DECIMAL DEFAULT 0,
+                    PartNumber VARCHAR(255) DEFAULT NULL,
                     PRIMARY KEY (Id)
                 );
 
@@ -54,13 +54,15 @@ namespace StockControl.API.Repositories
                     Date DATE,
                     Quantity INT,
                     Value DECIMAL,
-                    PRIMARY KEY (Id)
+                    PRIMARY KEY (Id),
+                    KEY `FK_PRODUCT_ID_idx` (`ProductId`),
+                    CONSTRAINT `FK_PRODUCT_ID` FOREIGN KEY (`ProductId`) REFERENCES `products` (`Id`)
                 );
 
                 CREATE TABLE IF NOT EXISTS ErrorLogs (
                     Id INT NOT NULL AUTO_INCREMENT,
                     Message TEXT,
-                    Timestamp DATETIME,
+                    Timestamp DATETIME DEFAULT NULL,
                     PRIMARY KEY (Id)
                 );
             """;
