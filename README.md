@@ -7,7 +7,7 @@
 produto.
 - Inclui o part number da peça.
 
-## Technologies, architecures and patterns
+## Technologies, architecture and patterns
 
 - .NET 8
 - MySQL
