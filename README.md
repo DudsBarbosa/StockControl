@@ -11,9 +11,8 @@ produto.
 
 - .NET 8
 - MySQL
-- TDD
-- CLEAN CODE
-- CQRS
-- MediatR
 - Dapper
 - Dependency Injection
+- TDD
+- Clean Code
+- CQRS e MediatR
